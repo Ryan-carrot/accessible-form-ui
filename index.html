@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accessible Form UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="card" aria-labelledby="form-title">
+        <h1 id="form-title">Update Profile</h1>
+        <p class="lead">Update your account information. All fields are required.</p>
+
+        <div class="field-container">
+            <form action="/profile/update" method="post" novalidate>
+            <!-- Full name -->
+            <div class="full-name">
+                <label for="full-name">Full name</label>
+                <input id="full-name"
+                    name="full_name"
+                    type="text"
+                    autocomplete="name"
+                    required
+                    placeholder="Enter Your Full Name"
+                    aria-required="true" />
+                <div class="hint" id="hint-fullname">Enter your full name as you want it displayed.</div>
+            </div>
+
+            <!-- Email -->
+            <div class="email">
+                <label for="email">Email</label>
+                <input id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    placeholder="Enter Your Email Address"
+                    aria-required="true" />
+                <div class="hint" id="hint-email">We will send a confirmation email if your address changes.</div>
+            </div>
+
+            <!-- Passwords-->
+                <div class="enter-password">
+                <label for="password">Enter password</label>
+                <input id="password"
+                        name="password"
+                        type="password"
+                        autocomplete="new-password"
+                        required
+                        minlength="8"
+                        placeholder="At least 8 characters"
+                        aria-required="true"
+                        aria-describedby="pw-hint" />
+                <div class="hint" id="pw-hint">Minimum 8 characters. Use a mix of letters and numbers for stronger passwords.</div>
+                </div>
+
+                <div class="confirm-password">
+                <label for="confirm-password">Confirm password</label>
+                <input id="confirm-password"
+                        name="confirm_password"
+                        type="password"
+                        autocomplete="new-password"
+                        required
+                        minlength="8"
+                        placeholder="Repeat password"
+                        aria-required="true"
+                        aria-describedby="confirm-hint" />
+                <div class="hint" id="confirm-hint">Re-type the same password. Note: matching must be validated server-side or with JavaScript.</div>
+                </div>
+
+            <!-- Accessible area for server-side or JS validation messages -->
+            <div aria-live="polite" aria-atomic="true" class="sr-only" id="validation-messages">
+                <!-- Validation messages (e.g. "Passwords do not match") can be placed here by server or JS -->
+            </div>
+
+            <div class="actions">
+                <button type="submit">Update Profile</button>
+            </div>
+
+            <p class="note">By submitting, you agree to our terms. Password confirmation is not enforced client-side in this static form.</p>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
