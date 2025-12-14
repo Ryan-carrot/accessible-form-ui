@@ -30,10 +30,15 @@ body {
 }
 
 .field-container { 
-    width: 40%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-h1 { 
+#form-title, .lead {
+    text-align: center;
+}
+
+#form-title { 
     margin: 0 0 12px 0; 
     font-size: 1.25rem; 
 }
@@ -72,12 +77,6 @@ input:focus {
     box-shadow: 0 8px 24px rgba(37,99,235,0.08); 
     transform: translateY(-2px); 
     border-color: rgba(37,99,235,0.2); 
-}
-
-.hint { 
-    font-size: 0.85rem; 
-    color: var(--muted); 
-    margin-top: 4px; 
 }
 
 .row { 
