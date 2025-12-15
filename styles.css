@@ -190,6 +190,10 @@ button:focus {
 }
 
 /* Progress details */
+.progress {
+    font-size: 1.2rem;
+}
+
 .progress-list {
     background-color: var(--ring-color);
     color: var(--card);
