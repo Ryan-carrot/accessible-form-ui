@@ -1,12 +1,19 @@
+/* variables */
 :root { 
     --bg:#f5f7fb; 
     --card:#fff; 
     --accent:#000000; 
     --muted:#6b7280; 
     --err:#dc2626; 
-    --radius: 10px; 
+    --radius: 10px;
+    --size: 120px;
+    --percentage: 70;
+    --ring-color: #0f172a;
+    --track-color: #e6eef8;
+    --inner-bg: var(--card);
 }
 
+/* Global Styles */
 body {
     font-family: 'Google Sans', 'Montserrat', 'roboto', 'TikTok Sans', sans-serif; 
     background: var(--bg); 
@@ -19,19 +26,26 @@ body {
     color: #0f172a;
 }
 
+/* Entire form card */
 .card {
     background: var(--card); 
-    border-radius: var(--radius); 
-    padding: 3rem; 
-    width: 100%; 
+    border-radius: var(--radius);  
+    width: 100%;
+    padding: 2rem; 
     max-width: 800px; 
     box-shadow: 0 6px 20px rgba(15,23,42,0.08);
     border: 1px solid rgba(2,6,23,0.06); 
 }
 
-.field-container { 
+/* Inner content wrapper */
+.form-wrapper { 
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+/* Left column with fields */
+.field-container { 
+    padding: 0 20px; 
 }
 
 #form-title, .lead {
@@ -71,6 +85,7 @@ input[type="password"] {
     font-size: 1rem;
     outline: none;
     transition: box-shadow .15s, transform .12s;
+    
 }
 
 input:focus { 
@@ -127,4 +142,67 @@ button:focus {
 .error { 
     color: var(--err); 
     font-size: 0.88rem; 
+}
+
+/* Circular progress component */
+.prog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.circular-progress {
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    background: conic-gradient(var(--ring-color) 0deg calc(var(--percentage) * 3.6deg), var(--track-color) calc(var(--percentage) * 3.6deg) 360deg);
+    transition: background 240ms ease, box-shadow 120ms ease, transform 120ms ease;
+}
+
+.circular-progress::before {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    background: var(--inner-bg);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.progress-center {
+    position: relative;
+    z-index: 2;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--size) - 26px);
+    height: calc(var(--size) - 26px);
+    border-radius: 50%;
+}
+
+.percentage {
+    font-weight: 700;
+    color: var(--ring-color);
+    font-size: calc(var(--size) * 0.22);
+}
+
+/* Progress details */
+.progress-list {
+    background-color: var(--ring-color);
+    color: var(--card);
+    list-style: none;
+    padding: 12px 30px;
+    border-radius: 15px;
+}
+
+.progress-list li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.progress-list li:nth-child(-n+2) {
+    text-decoration: line-through;
 }
