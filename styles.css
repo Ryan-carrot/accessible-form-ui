@@ -152,7 +152,7 @@ button:focus {
     padding: 12px 0;
 }
 
-.circular-progress {
+.circular-progress-bar {
     width: var(--size);
     height: var(--size);
     border-radius: 50%;
@@ -163,7 +163,7 @@ button:focus {
     transition: background 240ms ease, box-shadow 120ms ease, transform 120ms ease;
 }
 
-.circular-progress::before {
+.circular-progress-bar::before {
     content: '';
     position: absolute;
     inset: 12px;
