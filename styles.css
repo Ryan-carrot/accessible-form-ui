@@ -172,6 +172,12 @@ button:focus {
     z-index: 1;
 }
 
+.circular-progress-bar:focus {
+outline: none;
+box-shadow: 0 0 0 4px rgba(14,77,123,0.12);
+transform: translateY(-2px);
+}
+
 .progress-center {
     position: relative;
     z-index: 2;
@@ -209,4 +215,19 @@ button:focus {
 
 .progress-list li:nth-child(-n+2) {
     text-decoration: line-through;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .form-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .field-container {
+        padding: 0;
+    }
+
+    .prog-container {
+        margin-top: 24px;
+    }
 }
