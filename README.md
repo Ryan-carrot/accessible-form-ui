@@ -59,3 +59,7 @@ accessible-form-ui/
 - Add automated accessibility tests
 
 Thanks for using this accessible form UI — feel free to adapt it for your own projects! 👍
+
+## Lighthouse Scores
+<img width="1894" height="770" alt="image" src="https://github.com/user-attachments/assets/ade92358-2177-4205-a2f4-fbf4b7251eb0" />
+
