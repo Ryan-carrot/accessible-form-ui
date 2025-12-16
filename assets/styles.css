@@ -144,7 +144,19 @@ button:focus {
     font-size: 0.88rem; 
 }
 
-/* Circular progress component */
+/* Show password toggle */
+.show-password {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.show-password input[type="checkbox"] {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+/* Right column with Circular progress bar */
 .prog-container {
     display: flex;
     flex-direction: column;
@@ -173,9 +185,9 @@ button:focus {
 }
 
 .circular-progress-bar:focus {
-outline: none;
-box-shadow: 0 0 0 4px rgba(14,77,123,0.12);
-transform: translateY(-2px);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(14,77,123,0.12);
+    transform: translateY(-2px);
 }
 
 .progress-center {
@@ -231,3 +243,28 @@ transform: translateY(-2px);
         margin-top: 24px;
     }
 }
+
+/* Success Page Styles */
+.success {
+    text-align: center;
+    padding: 40px;
+}
+
+.success svg {
+    margin-bottom: 20px;
+}
+
+.thank-you {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--ring-color);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+}
+

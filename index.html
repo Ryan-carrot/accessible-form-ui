@@ -8,8 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="icon" type="image/png" href="./assets/favicon.ico">
+    <script src="./assets/script.js" defer></script>
 </head>
 <body>
     <main class="card" aria-labelledby="form-title">
@@ -18,7 +19,7 @@
 
         <div class="form-wrapper">
             <div class="field-container">
-                <form action="./youdidit.html" method="post" novalidate>
+                <form action="./youdidit.html" method="post" validate>
                 <!-- Full name -->
                 <div class="full-name">
                     <label for="full-name">Full name *</label>
@@ -45,8 +46,8 @@
 
                 <!-- Passwords-->
                     <div class="enter-password">
-                    <label for="password">Enter password *</label>
-                    <input id="password"
+                        <label for="password">Enter password *</label>
+                        <input id="password"
                             name="password"
                             type="password"
                             autocomplete="new-password"
@@ -55,11 +56,15 @@
                             placeholder="At least 8 characters"
                             aria-required="true"
                             aria-describedby="pw-hint" />
+                            <div class="show-password">
+                                <input type="checkbox" id="show-password" aria-label="Show password" onclick="togglePasswordVisibility()">
+                                <label for="show-password">Show password</label>
+                            </div>
                     </div>
 
                     <div class="confirm-password">
-                    <label for="confirm-password">Confirm password *</label>
-                    <input id="confirm-password"
+                        <label for="confirm-password">Confirm password *</label>
+                        <input id="confirm-password"
                             name="confirm_password"
                             type="password"
                             autocomplete="new-password"
@@ -68,6 +73,10 @@
                             placeholder="Repeat password"
                             aria-required="true"
                             aria-describedby="confirm-hint" />
+                            <div class="show-password">
+                                <input type="checkbox" id="show-confirm-password" aria-label="Show password" onclick="togglePasswordVisibility()">
+                                <label for="show-confirm-password">Show password</label>
+                            </div>
                     </div>
                 <div class="actions">
                     <button type="submit">Update Profile</button>
