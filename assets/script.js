@@ -1,15 +1,11 @@
 // Shows or hides the password input field based on the checkbox state
-function togglePasswordVisibility() {
-    var passwordInput = document.getElementById("password");
-    var confirmPasswordInput = document.getElementById("confirm-password");
-    var checkbox = document.getElementById("show-password");
-    var confirmCheckbox = document.getElementById("show-confirm-password");
+function togglePasswordVisibility(fieldId, checkboxId) {
+    var passwordInput = document.getElementById(fieldId);
+    var checkbox = document.getElementById(checkboxId);
 
-    if (checkbox.checked || confirmCheckbox.checked) {
+    if (checkbox.checked) {
         passwordInput.type = "text";
-        confirmPasswordInput.type = "text";
     } else {
         passwordInput.type = "password";
-        confirmPasswordInput.type = "password";
     }
 }
